@@ -27,6 +27,32 @@ function App() {
     }
   }, [start])
 
+  function adjustTimer(input) {
+    if (!start) {
+      switch (input) {
+        case "incHours":
+          setTime(prevTime => prevTime + 3600000)
+          break;
+        case "incMinutes":
+          setTime(prevTime => prevTime + 60000)
+          break;
+        case "incSeconds":
+          setTime(prevTime => prevTime + 1000)
+          break;
+        case "decHours":
+          setTime(prevTime => prevTime - 3600000)
+        case "decMinutes":
+          setTime(prevTime => prevTime - 60000)
+          break;
+        case "decSeconds":
+          setTime(prevTime => prevTime - 1000)
+          break;  
+        default:
+          break;
+      }
+    }
+  }
+
   return (
     <div className="App">
       <h1>Hello</h1>
