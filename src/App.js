@@ -55,7 +55,16 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Hello</h1>
+      <button onClick={() => adjustTimer("incHours")}>&#8679;</button>
+      <button onClick={() => adjustTimer("incMinutes")}>&#8679;</button>
+      <button onClick={() => adjustTimer("incSeconds")}>&#8679;</button>
+      <div>{hours} : {minutes} : {seconds}</div>
+      <button onClick={() => adjustTimer("decHours")}>&#8681;</button>
+      <button onClick={() => adjustTimer("decMinutes")}>&#8681;</button>
+      <button onClick={() => adjustTimer("decSeconds")}>&#8681;</button> <br/><br/>
+      <button onClick={() => setStart(true)}>Start</button>
+      <button onClick={() => setStart(false)}>Stop</button>
+      <button onClick={() => {setStart(false); setTime(0)}}>Reset</button>
     </div>
   );
 }
